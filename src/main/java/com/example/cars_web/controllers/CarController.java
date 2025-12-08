@@ -1,7 +1,7 @@
-package com.example.cars_web.controller;
+package com.example.cars_web.controllers;
 
-import com.example.cars_web.model.Car;
-import com.example.cars_web.repository.CarRepository;
+import com.example.cars_web.models.Car;
+import com.example.cars_web.repositories.CarRepository;
 import jakarta.validation.Valid;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
