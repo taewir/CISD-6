@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Inter', system-ui, sans-serif;
+            background: #000;
+            color: #fff;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+        }
+        .container {
+            max-width: 500px;
+            width: 100%;
+        }
+        h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+        }
+        .subtitle {
+            margin-bottom: 2rem;
+            opacity: 0.8;
+        }
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            font-size: 0.95rem;
+        }
+        input {
+            width: 100%;
+            padding: 0.75rem;
+            border: 2px solid #fff;
+            background: #000;
+            color: #fff;
+            font-size: 1rem;
+            transition: border 0.3s, background 0.3s;
+        }
+        input:focus {
+            outline: none;
+            border-color: #e74c3c;
+            background: #050505;
+        }
+        .buttons {
+            display: flex;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+        button, .btn {
+            padding: 0.75rem 1.5rem;
+            font-weight: 600;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            border: 2px solid #fff;
+            background: #fff;
+            color: #000;
+            transition: all 0.3s;
+        }
+        button:hover, .btn:hover {
+            background: #000;
+            color: #fff;
+        }
+        .btn-secondary {
+            background: #000;
+            color: #fff;
+        }
+        .btn-secondary:hover {
+            background: #111;
+        }
+        .message {
+            margin-bottom: 1rem;
+            color: #e74c3c;
+            font-size: 0.95rem;
+        }
+        .message-success {
+            color: #2ecc71;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>Login</h1>
+    <p class="subtitle">Sign in to manage cars.</p>
+
+    <div th:if="${param.error}" class="message">
+        Invalid username or password.
+    </div>
+    <div th:if="${param.logout}" class="message message-success">
+        You have been logged out.
+    </div>
+
+    <form th:action="@{/login}" method="post">
+        <div class="form-group">
+            <label>Username</label>
+            <input type="text" name="username">
+        </div>
+
+        <div class="form-group">
+            <label>Password</label>
+            <input type="password" name="password">
+        </div>
+
+        <div class="buttons">
+            <button type="submit">Sign in</button>
+            <a th:href="@{/cars/home}" class="btn btn-secondary">Home</a>
+        </div>
+    </form>
+
+    <p style="margin-top:1.5rem; opacity:0.8;">
+        No account yet?
+        <a th:href="@{/register}" style="color:#fff; text-decoration:underline;">Register</a>
+    </p>
+</div>
+</body>
+</html>
