@@ -1,6 +1,6 @@
-package com.example.cars_web.repository;
+package com.example.cars_web.repositories;
 
-import com.example.cars_web.model.Car;
+import com.example.cars_web.models.Car;
 import org.springframework.data.jpa.repository.JpaRepository;
 import java.util.List;
 

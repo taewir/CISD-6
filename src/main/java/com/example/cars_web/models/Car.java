@@ -1,4 +1,4 @@
-package com.example.cars_web.model;
+package com.example.cars_web.models;
 
 import jakarta.persistence.*;
 import jakarta.validation.constraints.*;
