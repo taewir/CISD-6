@@ -1,4 +1,4 @@
-package com.example.cars_web;
+package com.example.cars_web.config;
 
 import com.example.cars_web.models.AppUser;
 import com.example.cars_web.repositories.AppUserRepository;
